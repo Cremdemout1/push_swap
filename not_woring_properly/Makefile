@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+         #
+#    By: yohan <yohan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 15:26:22 by ycantin           #+#    #+#              #
-#    Updated: 2024/05/27 18:10:34 by ycantin          ###   ########.fr        #
+#    Updated: 2024/05/24 09:59:19 by yohan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,15 @@ SRC = 	commands/push.c \
 		commands/rev_rotate.c \
 		commands/rotate.c \
 		commands/swap.c \
+		median/find_median.c \
+		median/radix_sort.c \
 		errors/error_handling.c \
 		errors/frees.c \
 		initiation.c \
 		ps_utils.c \
-		node_assignement_utils.c \
-		node_data_assignment.c \
-		move_logic.c \
-		sort.c \
+		new_sort.c \
+		move_calc.c \
+		cost.c \
 		main.c
 
 all: $(NAME)

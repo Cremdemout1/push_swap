@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan <yohan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:39:02 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/20 16:00:05 by yohan            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:38:20 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,21 @@ void    rotate(t_stack **stack)
     *stack = next; //next is now head
 }
 
-void    ra(t_stack   **stack_a, int *count)
+void    ra(t_stack   **stack_a)
 {
-    write(1, "ra\n", 3);
+    printf("ra\n");
     rotate(stack_a);
-    (*count)++;
 }
 
-void    rb(t_stack   **stack_b, int *count)
+void    rb(t_stack   **stack_b)
 {
-    write(1, "rb\n", 3);
+    printf("rb\n");
     rotate(stack_b);
-    (*count)++;
 }
 
-void    rr(t_stack   **stack_a, t_stack   **stack_b, int *count)
+void    rr(t_stack   **stack_a, t_stack   **stack_b)
 {
-    write(1, "rr\n", 3);
+    printf("rr\n");
     rotate(stack_a);
     rotate(stack_b);
-    (*count) += 2;
 }

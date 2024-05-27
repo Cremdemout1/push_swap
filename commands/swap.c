@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan <yohan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:32:42 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/20 16:00:57 by yohan            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:38:44 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,20 @@ void    swap(t_stack **stack)
     *stack = under;
 }
 
-void    sa(t_stack **stack_a, int *count)
+void    sa(t_stack **stack_a)
 {
-    write(1, "sa\n", 3);
+    printf("sa\n");
     swap(stack_a);
-    (*count)++;
 }
-void    sb(t_stack **stack_b, int *count)
+void    sb(t_stack **stack_b)
 {
-    write(1, "sb\n", 3);
+    printf("sb\n");
     swap(stack_b);
-    (*count)++;
 }
 
-void    ss(t_stack **stack_a, t_stack **stack_b, int *count)
+void    ss(t_stack **stack_a, t_stack **stack_b)
 {
-    write (1, "ss\n", 4);
+    printf("ss\n");
     swap(stack_a);
     swap(stack_b);
-    (*count) += 2;
 }

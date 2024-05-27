@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan <yohan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:08:43 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/20 15:32:37 by yohan            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:37:44 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ void    pushin_p(t_stack **dest, t_stack **src)
     }
 }
 
-void    pa(t_stack **stack_a, t_stack **stack_b, int *count)
+void    pa(t_stack **stack_a, t_stack **stack_b)
 {
-    write (2, "pa\n", 3);
+    printf("pa\n");
     pushin_p(stack_a, stack_b);
-    (*count)++;
 }
 
-void    pb(t_stack **stack_a, t_stack **stack_b, int *count)
+void    pb(t_stack **stack_a, t_stack **stack_b)
 {
-    write (2, "pb\n", 3);
+    printf("pb\n");
     pushin_p(stack_b, stack_a);
-    (*count)++;
 }

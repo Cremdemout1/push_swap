@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan <yohan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:56:02 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/20 16:00:36 by yohan            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:37:36 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,24 +76,21 @@ void rev_rotate(t_stack **stack)
 }
 
 
-void rra(t_stack **stack_a, int *count)
+void rra(t_stack **stack_a)
 {
-    write (1, "rra\n", 4);
+    printf("rra\n");
     rev_rotate(stack_a);
-    (*count)++;
 }
 
-void rrb(t_stack **stack_b, int *count)
+void rrb(t_stack **stack_b)
 {
-    write (1, "rrb\n", 4);
+    printf("rrb\n");
     rev_rotate(stack_b);
-    (*count)++;
 }
 
-void rrr(t_stack **stack_a, t_stack **stack_b, int *count)
+void rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    write(1, "rrr\n", 5);
+    printf("rrr\n");
     rev_rotate(stack_a);
     rev_rotate(stack_b);
-    (*count) += 2;
 }
