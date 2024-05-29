@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:49:12 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/27 17:43:26 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/29 12:27:01 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ long	ft_atol(const char *str)
 int		length_of_list(t_stack **stack)
 {
 	if (!stack || !*stack)
-		return (NULL);
+		return (-1);
 	t_stack *current;
 	int i;
 
@@ -107,4 +107,18 @@ int		length_of_list(t_stack **stack)
 		current = current->next;
 	}
 	return (i);
+}
+
+t_stack *last_index(t_stack **stack)
+{
+	t_stack *current;
+	int i;
+
+	i = 0;
+	current = *stack;
+	while(current)
+	{
+		current = current->next;
+	}
+	return (current);
 }

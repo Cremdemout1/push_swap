@@ -6,7 +6,7 @@
 #    By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 15:26:22 by ycantin           #+#    #+#              #
-#    Updated: 2024/05/27 18:10:34 by ycantin          ###   ########.fr        #
+#    Updated: 2024/05/29 10:26:04 by ycantin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = 	commands/push.c \
 		errors/frees.c \
 		initiation.c \
 		ps_utils.c \
-		node_assignement_utils.c \
+		node_assignment_utils.c \
 		node_data_assignment.c \
 		move_logic.c \
 		sort.c \

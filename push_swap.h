@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:32:53 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/27 18:06:17 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:45:54 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ t_stack	    *ft_lstnew(int content);
 void	    ft_lstadd_back(t_stack **lst, t_stack *new);
 long	    ft_atol(const char *str);
 int		    length_of_list(t_stack **stack);
-
-
+t_stack     *last_index(t_stack **stack);
 
 //stack initiation:
 void        free_str_array(char **array);
@@ -87,7 +86,7 @@ int         is_it_sorted(t_stack **stack);
 void        sort_three(t_stack **stack);
 void        sorted_check(t_stack **stack_a);
 int         node_amount(t_stack **stack);
-void        new_sort(t_stack **stack_a, t_stack **stack_b);
+void        sort(t_stack **stack_a, t_stack **stack_b);
 
 
 //moves:
@@ -110,13 +109,17 @@ void        new_sort(t_stack **stack_a, t_stack **stack_b);
 // int         find_median(t_stack **stack_a, int size);
 t_stack        *find_smallest(t_stack **stack_a);
 int            get_median(t_stack **stack);
-
-
 void           assign_target(t_stack **stack_a, t_stack **stack_b);
 void           assign_node_index(t_stack **stack_a, t_stack **stack_b);
 void           assign_median_up_or_down(t_stack **stack_a, t_stack **stack_b);
 void           assign_cheapest(t_stack **stack_b);
+void           assign_cost(t_stack **stack_a, t_stack **stack_b);
 void           assign_data(t_stack **stack_a, t_stack **stack_b);
 
+//moves:
+void           both_under_median_value(t_stack **stack_a, t_stack **stack_b, t_stack *for_the_top);
+void           both_over_median_value(t_stack **stack_a, t_stack **stack_b, t_stack *for_the_top);
+void           not_on_same_side(t_stack **stack_a, t_stack **stack_b, t_stack *for_the_top);
+void           all_moves(t_stack **stack_a, t_stack **stack_b);
 
 #endif

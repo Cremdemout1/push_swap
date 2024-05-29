@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 15:42:08 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/27 18:06:38 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/29 18:27:59 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void    assign_median_up_or_down(t_stack **stack_a, t_stack **stack_b)
             current_a->median_value = 0;
         else
             current_a->median_value = 1;
+        current_a = current_a->next;
     }
     while (current_b)
     {
@@ -84,6 +85,7 @@ void    assign_median_up_or_down(t_stack **stack_a, t_stack **stack_b)
             current_b->median_value = 0;
         else
             current_b->median_value = 1;
+        current_b = current_b->next;
     }
 }
 
@@ -91,7 +93,6 @@ void    assign_cost(t_stack **stack_a, t_stack **stack_b)
 {
     int len_a;
     int len_b;
-    t_stack *current_a;
     t_stack *current_b;
     
     current_b = *stack_b;
@@ -129,6 +130,7 @@ void    assign_cheapest(t_stack **stack_b)
             cost = current->cost;
         }
         current->cheapest = 0;
+        current = current->next;
     }
     current = *stack_b;
     while (current->index != i)

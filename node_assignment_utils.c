@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:43:28 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/27 18:06:44 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/29 11:52:59 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,33 +36,22 @@ t_stack     *find_smallest(t_stack **stack_a)
 
 int    get_median(t_stack **stack)
 {
+    int i;
     int median;
     t_stack *current;
 
-    while (current)
-        current = current->next;
-    if (current->index % 2 == 0)
-        (median = current->index / 2 - 1);
-    else
-        median = current->index / 2;
-    return(median);
-}
-
-int     find_cheapest(t_stack **stack_b)
-{
-    t_stack *current;
-    int cost;
-
-    current = *stack_b;
-    cost = INT_MAX;
+    i = 0;
+    current = *stack;
     while (current)
     {
-        if (current->cost < cost)
-        {
-            cost = current->cost;
-            
-        }
+        i++;
+        current = current->next;
     }
+    if (i % 2 == 0)
+        median = i / 2 - 1;
+    else
+        median = i / 2;
+    return(median);
 }
 
 void    assign_data(t_stack **stack_a, t_stack **stack_b)
