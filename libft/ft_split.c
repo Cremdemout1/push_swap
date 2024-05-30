@@ -6,20 +6,11 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 12:42:55 by yohan             #+#    #+#             */
-/*   Updated: 2024/04/24 18:24:05 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:43:57 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct s_vars
-{
-	int		word_count;
-	int		i;
-	int		start;
-	int		str_index;
-	char	**dest;
-}			t_vars;
 
 static int	ft_count_words(const char *str, char c)
 {

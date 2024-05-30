@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 12:58:00 by yohan             #+#    #+#             */
-/*   Updated: 2024/05/27 11:56:26 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:44:19 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,15 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_vars
+{
+	int		word_count;
+	int		i;
+	int		start;
+	int		str_index;
+	char	**dest;
+}			t_vars;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

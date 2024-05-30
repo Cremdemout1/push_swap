@@ -21,7 +21,7 @@ t_stack	*ft_lstnew(int content)
 		return (NULL);
 	list->content = content;
 	list->next = NULL;
-    list->prev = NULL;
+	list->prev = NULL;
 	return (list);
 }
 
@@ -32,7 +32,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	if (!new || !lst)
 		return ;
 	current = ft_lstlast(*lst);
-	
 	if (lst && current)
 		current->next = new;
 	else
@@ -70,16 +69,16 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-int		length_of_list(t_stack **stack)
+int	length_of_list(t_stack **stack)
 {
+	t_stack	*current;
+	int		i;
+
 	if (!stack || !*stack)
 		return (-1);
-	t_stack *current;
-	int i;
-
 	i = 0;
 	current = *stack;
-	while(current)
+	while (current)
 	{
 		i++;
 		current = current->next;
