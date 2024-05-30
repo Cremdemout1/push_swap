@@ -6,17 +6,16 @@
 #    By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 15:26:22 by ycantin           #+#    #+#              #
-#    Updated: 2024/05/29 10:26:04 by ycantin          ###   ########.fr        #
+#    Updated: 2024/05/30 13:27:16 by ycantin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = ./libft/libft.a
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Wextra -Werror -I -g #-fsanitize=address,undefined
+FLAGS = -Wall -Wextra -Werror -I -g
 RM = rm -f
 
-#COM_DIR = push rev_rotate rotate swap
 SRC = 	commands/push.c \
 		commands/rev_rotate.c \
 		commands/rotate.c \
@@ -25,8 +24,8 @@ SRC = 	commands/push.c \
 		errors/frees.c \
 		initiation.c \
 		ps_utils.c \
-		node_assignment_utils.c \
-		node_data_assignment.c \
+		data_initiation/node_assignment_utils.c \
+		data_initiation/node_data_assignment.c \
 		move_logic.c \
 		sort.c \
 		main.c

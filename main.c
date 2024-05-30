@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:26:41 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/29 18:30:53 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:32:24 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main(int argc, char **argv)
     stack_b = NULL;
     stack_creat(&stack_a, argc, argv);
     sorted_check(&stack_a);
-    if(ft_lstsize(stack_a) == 2 && stack_a->content > stack_a->next->content)  //if list is unsorted and has 2 nodes, swap
+    if(length_of_list(&stack_a) == 2 && stack_a->content > stack_a->next->content)
             sa(&stack_a);
-    else if (ft_lstsize(stack_a) == 3)
+    else if (length_of_list(&stack_a) == 3)
         sort_three(&stack_a);
     else
         sort(&stack_a, &stack_b);
@@ -53,12 +53,12 @@ int main(int argc, char **argv)
 //         curr = curr->next;
 // 	}
 //     sorted_check(&stack_a);
-//     if(ft_lstsize(stack_a) == 2)  //if list is unsorted and has 2 nodes, swap
+//     if(length_of_list(&stack_a) == 2)  //if list is unsorted and has 2 nodes, swap
 //     {
 //         if(stack_a->content > stack_a->next->content)
 //             sa(&stack_a);
 //     }
-//     else if (ft_lstsize(stack_a) == 3)
+//     else if (length_of_list(&stack_a) == 3)
 //         sort_three(&stack_a);
 //     else
 //         sort(&stack_a, &stack_b);

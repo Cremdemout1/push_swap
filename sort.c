@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 15:35:48 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/29 18:28:48 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:06:01 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    sorted_check(t_stack **stack_a)
     
     if (is_it_sorted(stack_a) == SORTED)
     {
-        write(1, "list already sorted\n", 21);
+        write(1, "Error\n", 21);
         clear_list(stack_a);
         exit(1);
     }
@@ -66,17 +66,10 @@ void    sort_three(t_stack **stack)
 
 void    sort(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *current;
     t_stack *smallest;
     int i;
 
-    i = 0;
-    current = *stack_a;
-    while (current)
-    {
-        i++;
-        current = current->next;
-    }
+    i = length_of_list(stack_a);
     while (i > 3)
     {
         pb(stack_a, stack_b);
@@ -88,10 +81,9 @@ void    sort(t_stack **stack_a, t_stack **stack_b)
         assign_data(stack_a, stack_b);
         all_moves(stack_a, stack_b);
     }
-    assign_node_index(stack_a, stack_b);
-    assign_median_up_or_down(stack_a, stack_b);
+    assign_index_and_median(stack_a);
     smallest = find_smallest(stack_a);
-    	if ((*stack_a)->median_value == 0)
+    	if ((*stack_a)->median_value == 1)
 		while (*stack_a != smallest)
 			ra(stack_a);
 	else

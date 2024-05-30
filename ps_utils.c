@@ -6,7 +6,7 @@
 /*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:49:12 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/29 12:27:01 by ycantin          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:20:48 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@ t_stack	*ft_lstnew(int content)
 	return (list);
 }
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
-{
-	if (new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
-}
-
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*current;
@@ -46,19 +37,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		current->next = new;
 	else
 		*lst = new;
-}
-
-int	ft_lstsize(t_stack *lst)
-{
-	int	node_amount;
-
-	node_amount = 0;
-	while (lst)
-	{
-		node_amount++;
-		lst = lst->next;
-	}
-	return (node_amount);
 }
 
 t_stack	*ft_lstlast(t_stack *lst)
@@ -107,18 +85,4 @@ int		length_of_list(t_stack **stack)
 		current = current->next;
 	}
 	return (i);
-}
-
-t_stack *last_index(t_stack **stack)
-{
-	t_stack *current;
-	int i;
-
-	i = 0;
-	current = *stack;
-	while(current)
-	{
-		current = current->next;
-	}
-	return (current);
 }

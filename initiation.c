@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initiation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan <yohan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ycantin <ycantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:38 by ycantin           #+#    #+#             */
-/*   Updated: 2024/05/23 22:12:52 by yohan            ###   ########.fr       */
+/*   Updated: 2024/05/30 13:09:09 by ycantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char **all_args(int argc, char **argv)
 
     if (arg_validity(array) == 1)
     {
-        write(1, "Arguments did not comply with set rules\n", 41);
+        write(1, "Error\n", 7);
         free_str_array(array);
         return (NULL);
     }
@@ -79,14 +79,14 @@ void	stack_creat(t_stack **stack, int argc, char **argv)
     {
          content = ft_atol(array_arg[i]);
         if (content > INT_MAX || content < INT_MIN || ft_strlen(array_arg[i]) > 11)
-            free_all(stack, array_arg, "number does not respect value boundaries\n", 41);
+            free_all(stack, array_arg, "Error\n", 7);
         node_new = ft_lstnew(content);
         if (!node_new)
-            free_all(stack, array_arg, "node non existant\n", 19);
+            free_all(stack, array_arg, "Error\n", 7);
         ft_lstadd_back(stack, node_new);
         i++;
     }
     if (duplicate_checker(stack) == 1)
-        free_all(stack, array_arg, "duplicate arguments found\n", 27);
+        free_all(stack, array_arg, "Error\n", 7);
     free_str_array(array_arg);
 }
